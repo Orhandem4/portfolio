@@ -7,15 +7,20 @@ class MyAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        AppLogo(),
-        Spacer(),
-        AppMenus(),
-        Spacer(),
-        LanguageToggle(),
-        ThemeToggle(),
-      ],
+    return Container(
+      color: Colors.red,
+      height: context.insets.appBarHeight,
+      padding: EdgeInsets.symmetric(horizontal: context.insets.Padding),
+      child: Row(
+        children: [
+          AppLogo(),
+          Spacer(),
+          AppMenus(),
+          Spacer(),
+          LanguageToggle(),
+          ThemeToggle(),
+        ],
+      ),
     );
   }
 }
@@ -26,7 +31,7 @@ class AppLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      'Portfolio', 
+      'Portfolio',
       style: context.textStyle.titleLgBold,
     );
   }
@@ -39,7 +44,7 @@ class AppMenus extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(context.texts.home), 
+        Text(context.texts.home),
         Text(context.texts.courses),
         Text(context.texts.blog),
         Text(context.texts.aboutMe),
@@ -53,7 +58,7 @@ class LanguageToggle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PopupMenuButton(itemBuilder: (context){
+    return PopupMenuButton(itemBuilder: (context) {
       return [
         PopupMenuItem(child: Text('English')),
         PopupMenuItem(child: Text('Türkçe')),
